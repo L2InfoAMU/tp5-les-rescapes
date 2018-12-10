@@ -9,21 +9,25 @@ public class Rectangle implements Shape {
     private int y;
     private Color color;
 
-    public Rectangle(int width, int height, int x, int y, Color color) {
-        this.width = width;
-        this.height = height;
+    public Rectangle(int x, int y, int width, int height, Color color) {
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;
         this.color = color;
     }
 
     @Override
     public boolean contains(Point point) {
-        return this.x < x && x <= this.x+width && this.y<y && y<= this.y+height;
-    }
+    Point point1 = new Point(this.x,this.y);
+    point = new Point(x,y);
+    return point1.equals(point);
 
+    }
     @Override
     public Color getColor() {
         return this.color;
+
     }
+
 }
